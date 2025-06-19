@@ -40,7 +40,7 @@
 		L.tileLayer('https://api.maptiler.com/maps/topo/{z}/{x}/{y}.png?key=4CI3hvSGGwgJXODif6KH', {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
 		}).addTo(map);
 
-		omnivore.csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTr5jTph65nki_qwk7N1ZbIsbNu3mtkjRCSomIPI-zehl0ypVa7BpJgdk1KjLsbwuvx2sWiQ4AgMkJD/pub?output=csv').addTo(map);
+		var redesigns = omnivore.csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTr5jTph65nki_qwk7N1ZbIsbNu3mtkjRCSomIPI-zehl0ypVa7BpJgdk1KjLsbwuvx2sWiQ4AgMkJD/pub?output=csv').addTo(map);
 
 	</script>
 
