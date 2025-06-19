@@ -45,6 +45,8 @@
 		L.tileLayer('https://api.maptiler.com/maps/topo/{z}/{x}/{y}.png?key=4CI3hvSGGwgJXODif6KH', {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
 		}).addTo(map);
 
+		var customPopup = "<b>Location:</b> " + marker.toGeoJSON().properties.intersection_name + "</br><b>Description: </b>" + marker.toGeoJSON().properties.site_description + "</br><b>Designed by: </b>" + marker.toGeoJSON().properties.designer
+
 		var customOptions = {
 		    'maxWidth': 400,
 		    'width': 200,
@@ -54,7 +56,7 @@
 		omnivore.csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTr5jTph65nki_qwk7N1ZbIsbNu3mtkjRCSomIPI-zehl0ypVa7BpJgdk1KjLsbwuvx2sWiQ4AgMkJD/pub?output=csv')
 		.on('ready', function(layer) {
 			this.eachLayer(function(marker) {
-				marker.bindPopup('"<b>Location:</b> " + marker.toGeoJSON().properties.intersection_name + "</br><b>Description: </b>" + marker.toGeoJSON().properties.site_description + "</br><b>Designed by: </b>" + marker.toGeoJSON().properties.designer',customOptions);
+				marker.bindPopup(customPopup,customOptions);
 		});
 	})
 	.addTo(map);
